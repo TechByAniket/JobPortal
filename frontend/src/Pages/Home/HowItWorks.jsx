@@ -74,42 +74,47 @@ export const HowItWorks = () => {
 
   return (
     <Carousel
-      opts={{
-        align: "start",
-        loop: false,
-      }}
-      className="w-full max-w-6xl mx-auto"
-    >
-      {/* Arrows */}
-      <CarouselPrevious className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 my-transition' />
-      <CarouselContent className="gap-6 px-10 py-4 flex">
-        {howItWorks.map(({ cardNo, title, description, icon:Icon, tag }) => (
-          <CarouselItem
-            key={cardNo}
-            className="basis-full md:basis-1/2"
-          >
-            <Card className="relative h-[450px] w-full                            md:h-64 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl my-transition">
-              <CardHeader className="text-center flex justify-start items-center gap-5 md:gap-20">
-                <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg">
-                    {cardNo}
-                </div>              
-                <CardTitle className="text-lg font-semibold">{title}</CardTitle>
-              </CardHeader>
-              <CardContent className='group flex flex-col justify-center items-center gap-10'>
-                <p className="text-muted-foreground text-center transition-opacity duration-300 group-hover:opacity-30">
-                  {description}
-                </p>
-                <div className="how-it-works absolute inset-0 z-10 h-full w-full pt-[100%] hover:pt-0 hover:backdrop-blur-sm flex flex-col justify-center items-center my-transition">
-                    <Icon className="w-12 h-12 text-blue-600 hover:pt-0" />  
-                    <p>{tag}</p>
-                </div>
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselNext className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 my-transition' />
-    </Carousel>
+  opts={{
+    align: "start",
+    loop: false,
+  }}
+  className="w-full max-w-6xl mx-auto"
+>
+  {/* Arrows */}
+  <CarouselPrevious className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 my-transition' />
+  
+  <CarouselContent className="gap-6 px-10 py-4 flex">
+    {howItWorks.map(({ cardNo, title, description, icon: Icon, tag }) => (
+      <CarouselItem
+        key={cardNo}
+        className="basis-full md:basis-1/2"
+      >
+        <Card className="relative h-[450px] w-full md:h-64 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl my-transition">
+          <CardHeader className="text-center flex justify-start items-center gap-5 md:gap-20">
+            <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg">
+              {cardNo}
+            </div>
+            {/* ✅ Changed CardTitle to semantic <h3> */}
+            <h3 className="font-medium">{title}</h3>
+          </CardHeader>
+
+          <CardContent className='group flex flex-col justify-center items-center gap-10'>
+            <p className="text-muted-foreground text-center transition-opacity duration-300 group-hover:opacity-30">
+              {description}
+            </p>
+            <div className="how-it-works absolute inset-0 z-10 h-full w-full pt-[100%] hover:pt-0 hover:backdrop-blur-sm flex flex-col justify-center items-center my-transition">
+              <Icon className="w-12 h-12 text-blue-600 hover:pt-0" />
+              <p>{tag}</p>
+            </div>
+          </CardContent>
+        </Card>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+
+  <CarouselNext className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 my-transition' />
+</Carousel>
+
 
 
   );
