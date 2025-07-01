@@ -3,7 +3,7 @@ import './App.css'
 import { AppLayout } from './Layout/AppLayout'
 import { RouterProvider } from 'react-router'
 import { Home } from './Pages/Home/HomePage'
-import { Jobs } from './Pages/Jobs/Jobs'
+import { JobsPage } from './Pages/Jobs/JobsPage'
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/jobs',
-        element:<Jobs/>
+        element:<JobsPage/>
       }
     ]
   }

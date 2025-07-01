@@ -14,7 +14,7 @@ export const Header = () => {
   const navLinks = [
     { label: "Home", to: "/" },
     { label: "Browse Jobs", to: "/jobs" },
-    { label: "Resume", to: "/resume-builder" },
+    { label: "Build Resume", to: "/build-resume" },
     { label: "About", to: "/about" },
   ];
 
@@ -65,7 +65,7 @@ export const Header = () => {
                     key={label}
                     className="block py-2 cursor-pointer hover:bg-gray-100"
                   >
-                    <Link className="px-2" to={to}>
+                    <Link className="px-2" to={to} onClick={() => setOpen(false)}>
                       {label}
                     </Link>
                   </li>
