@@ -50,7 +50,7 @@ export const FAQ = () => {
         faqs.map(({ question, answer }) => {
             return (
                 <AccordionItem key={question} value={question}>
-                    <AccordionTrigger className='text-base md:text-lg'>{question}</AccordionTrigger>
+                    <AccordionTrigger className='text-base md:text-lg cursor-pointer'>{question}</AccordionTrigger>
                         <AccordionContent>
                             <p className='text-sm md:text-base '>{answer}</p>
                         </AccordionContent>

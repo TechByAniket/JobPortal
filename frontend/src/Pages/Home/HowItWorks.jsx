@@ -81,7 +81,7 @@ export const HowItWorks = () => {
   className="w-full max-w-6xl mx-auto"
 >
   {/* Arrows */}
-  <CarouselPrevious className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 my-transition' />
+  <CarouselPrevious className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 cursor-pointer my-transition' />
   
   <CarouselContent className="gap-6 px-10 py-4 flex">
     {howItWorks.map(({ cardNo, title, description, icon: Icon, tag }) => (
@@ -112,7 +112,7 @@ export const HowItWorks = () => {
     ))}
   </CarouselContent>
 
-  <CarouselNext className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 my-transition' />
+  <CarouselNext className='h-12 w-12 rounded-full bg-white shadow-md text-black hover:bg-gray-100 cursor-pointer my-transition' />
 </Carousel>
 
 

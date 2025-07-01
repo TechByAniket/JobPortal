@@ -72,7 +72,7 @@ export const Features = () => {
           <ToggleGroupItem
             key={title}
             value={title}
-            className="shrink-0 px-4 py-2 text-sm border rounded-md"
+            className="shrink-0 px-4 py-2 text-sm border rounded-md cursor-pointer"
           >
             {title}
           </ToggleGroupItem>
