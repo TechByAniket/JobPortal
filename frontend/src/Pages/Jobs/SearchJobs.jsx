@@ -26,10 +26,12 @@ export const SearchJobs = () => {
         <p className='my-subheading'>Explore top roles tailored to your skills, interests, and goals — apply with just a click!</p>
         <div className='my-padding flex flex-col md:flex-row gap-4'>
             <div className='flex justify-center items-center gap-4'>
-                <span><CiSearch size={25}/></span><input type="text" placeholder='Job Title, Keywords' className='my-transition border-none'/>
+                <span><CiSearch size={25}/></span>
+                <input type="text" placeholder='Job Title, Keywords' className='my-transition border-none'/>
             </div>
             <div className='flex justify-center items-center gap-4'>
-                <span><CiLocationOn size={25}/></span><input type="text" placeholder='Location' className='my-transition border-none'/>
+                <span><CiLocationOn size={25}/></span>
+                <input type="text" placeholder='Location' className='my-transition border-none'/>
             </div>
             <div className='flex justify-center items-center gap-5'>
                 <span><TfiViewGrid size={20}/></span>
