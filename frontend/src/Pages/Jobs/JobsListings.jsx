@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
-import { JobsCard } from "./JobsCard";
+import { JobsListCard } from "./JobsListCard";
 import { RxCross2 } from "react-icons/rx";
 import { CiFilter } from "react-icons/ci";
 import { JobsFilter } from "./JobsFilter";
@@ -50,7 +50,7 @@ export const JobsListings = () => {
         <DropdownList />
       </div>
       <div>
-        <JobsCard />
+        <JobsListCard />
       </div>
     </section>
   );

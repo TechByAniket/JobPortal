@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const CallToAction = () => {
   return (
@@ -11,7 +12,7 @@ export const CallToAction = () => {
     Start by uploading your resume or building a new one with our AI Resume Builder.
   </p>
   <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base rounded-lg cursor-pointer">
-    Get Started for Free
+    <Link to='/build-resume'>Get Started for Free</Link>
   </Button>
 </section>
   )

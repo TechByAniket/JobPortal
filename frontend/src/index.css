@@ -157,7 +157,7 @@ input{
   padding-bottom: 20px;
 }
 
-.jobpage-container{
+.wide-container{
   @apply w-[90%] md:w-[80%] max-w-[1200px] mx-auto pb-5
 }
 
