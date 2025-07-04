@@ -8,6 +8,7 @@ import { JobDescription } from "./JobDescription";
 import { JobOverview } from "./JobOverview";
 import { Button } from "@/components/ui/button";
 import { HiSparkles } from "react-icons/hi2";
+import { ShareJob } from "./ShareJob";
 
 export const JobDetailsPage = () => {
   const { id } = useParams();
@@ -45,18 +46,12 @@ export const JobDetailsPage = () => {
         <div className="md:w-[70vw] md:py-4 px-2 md:px-8 ">
           <JobDescription job={job} />
         </div>
-        <div className="md:w-[30vw] mt-8 md:mt-0 py-4 px-2 md:px-8 bg-gray-100">
-          <JobOverview job={job} />
+        <div className="md:w-[30vw] flex flex-col gap-1 md:gap-4">
+          <div className="mt-8 md:mt-0 py-4 px-2 md:px-8 bg-gray-100"><JobOverview job={job} /></div>
+          <div className="mt-8 md:mt-0 py-4 px-2 md:px-8 bg-gray-100"><ShareJob job={job}/></div>
         </div>
       </div>
-      <div className="py-4 flex justify-center items-center gap-5">
-        <Button className=" text-xs rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white hover:brightness-110 transition-all cursor-pointer">
-          <HiSparkles /> Tailor Resume
-        </Button>
-        <Button className=" text-xs rounded-md cursor-pointer" variant="blue">
-          <Link to={`${job.apply_link}`}>Apply Now</Link>
-        </Button>
-      </div>
+      
     </section>
   );
 };

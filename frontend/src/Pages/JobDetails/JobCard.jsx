@@ -11,6 +11,7 @@ import {
 import { HiSparkles } from "react-icons/hi2";
 import { CiBookmark } from "react-icons/ci";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const JobCard = ({ job }) => {
   const {
@@ -22,7 +23,7 @@ export const JobCard = ({ job }) => {
     posted_date,
     salary,
     logo_url,
-    industry = "Tech"
+    industry = "Tech",
   } = job;
 
   return (
@@ -30,7 +31,7 @@ export const JobCard = ({ job }) => {
       <CardHeader className="py-4 flex flex-col md:flex-row justify-center items-center gap-5">
         <div className="p-0 md:p-2 h-20 w-20 md:h-28 md:w-28 rounded-xl">
           <img
-            src='/Jobs/Amazon.png'
+            src="/Jobs/Amazon.png"
             alt={`${company} Logo`}
             className="object-contain h-full w-full"
           />
@@ -45,14 +46,27 @@ export const JobCard = ({ job }) => {
               <span className="text-gray-400">|</span>
               <span className="text-theme">{industry}</span>
             </CardDescription>
-            <CardDescription className='flex flex-wrap justify-center md:justify-start items-center'>
+            <CardDescription className="flex flex-wrap justify-center md:justify-start items-center">
               {location}
             </CardDescription>
           </div>
 
           <div className="flex justify-center md:justify-end mt-2 md:mt-0 w-full md:w-auto">
-            <CardAction className="flex gap-2 text-base md:text-xl">
-              <HiSparkles /> <CiBookmark />
+            <CardAction className="flex flex-col text-base md:text-xl">
+              <div className="flex gap-2 justify-center md:justify-end">
+                <HiSparkles /> <CiBookmark />
+              </div>
+              <div className="hidden py-4 md:flex justify-center items-center gap-5">
+                <Button className=" text-xs rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white hover:brightness-110 transition-all cursor-pointer">
+                  <HiSparkles /> Tailor Resume
+                </Button>
+                <Button
+                  className=" text-xs rounded-md cursor-pointer"
+                  variant="blue"
+                >
+                  <Link to={`${job.apply_link}`}>Apply Now</Link>
+                </Button>
+              </div>
             </CardAction>
           </div>
         </div>
@@ -62,7 +76,19 @@ export const JobCard = ({ job }) => {
         <span className="bg-gray-100 px-2 py-1 rounded-3xl">{posted_date}</span>
         <span className="bg-gray-100 px-2 py-1 rounded-3xl">{salary}</span>
       </CardContent>
-      <CardFooter className="justify-end gap-3"></CardFooter>
+      <CardFooter className="justify-center">
+        <div className="md:hidden flex justify-center items-center gap-5">
+                <Button className=" text-xs rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white hover:brightness-110 transition-all cursor-pointer">
+                  <HiSparkles /> Tailor Resume
+                </Button>
+                <Button
+                  className=" text-xs rounded-md cursor-pointer"
+                  variant="blue"
+                >
+                  <Link to={`${job.apply_link}`}>Apply Now</Link>
+                </Button>
+            </div>
+      </CardFooter>
     </Card>
   );
 };

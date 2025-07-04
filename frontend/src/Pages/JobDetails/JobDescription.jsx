@@ -20,13 +20,13 @@ export const JobDescription = ({ job }) => {
           </h3>
           {Array.isArray(value) &&
           (key === "key_responsibilities" || key === "requirements") ? (
-            <ul className="list-disc list-inside text-sm md:text-base text-gray-600 space-y-1">
+            <ul className="list-disc list-inside leading-6 md:leading-9 text-sm md:text-base text-gray-600 space-y-1">
               {value.map((point, index) => (
                 <li key={index}>{point}</li>
               ))}
             </ul>
           ) : (
-            <p className="text-sm md:text-base text-gray-600">
+            <p className="text-sm md:text-base leading-6 md:leading-9 text-gray-600">
               {Array.isArray(value) ? value.join(", ") : String(value)}
             </p>
           )}
