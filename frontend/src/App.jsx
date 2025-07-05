@@ -6,6 +6,9 @@ import { Home } from './Pages/Home/HomePage'
 import { JobsPage } from './Pages/Jobs/JobsPage'
 import { ResumePage } from './Pages/Resume/ResumePage'
 import { JobDetailsPage } from './Pages/JobDetails/JobDetailsPage'
+import { BuildResume } from './Pages/Resume/BuildResume'
+import { TailorResume } from './Pages/Resume/TailorResume'
+import { AboutUsPage } from './Pages/AboutUs/AboutUsPage'
 
 const router = createBrowserRouter([
   {
@@ -20,13 +23,25 @@ const router = createBrowserRouter([
         element:<JobsPage/>
       },
       {
-        path:'/build-resume',
+        path:'/jobs/:id', // temporary-URL -----> will make it dynamic soon
+        element:<JobDetailsPage/>
+      },
+      {
+        path:'/resume',
         element:<ResumePage/>
       },
       {
-        path:'/jobs/:id', // temporary-URL -----> will make it dynamic soon
-        element:<JobDetailsPage/>
-      }
+        path:'/resume/build',
+        element:<BuildResume/>
+      },
+      {
+        path:'/resume/tailor',
+        element:<TailorResume/>
+      },
+      {
+        path:'/about-us',
+        element:<AboutUsPage/>
+      },
     ]
   }
 ])

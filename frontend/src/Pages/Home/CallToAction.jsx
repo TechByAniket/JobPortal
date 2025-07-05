@@ -12,7 +12,7 @@ export const CallToAction = () => {
     Start by uploading your resume or building a new one with our AI Resume Builder.
   </p>
   <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base rounded-lg cursor-pointer">
-    <Link to='/build-resume'>Get Started for Free</Link>
+    <Link to='/resume'>Get Started for Free</Link>
   </Button>
 </section>
   )

@@ -14,8 +14,8 @@ export const Header = () => {
   const navLinks = [
     { label: "Home", to: "/" },
     { label: "Browse Jobs", to: "/jobs" },
-    { label: "Build Resume", to: "/build-resume" },
-    { label: "About", to: "/about" },
+    { label: "Build Resume", to: "/resume" },
+    { label: "About", to: "/about-us" },
   ];
 
   return (

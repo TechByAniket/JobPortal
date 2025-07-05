@@ -3,8 +3,12 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button"
 import { PiNotePencilBold } from "react-icons/pi"
 import { LiaToolsSolid } from "react-icons/lia"
+import { useNavigate } from 'react-router-dom'
 
 export const PreviewCards = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
       
@@ -28,7 +32,7 @@ export const PreviewCards = () => {
             <li>Guided section builder</li>
             <li>Download in PDF format</li>
           </ul>
-          <Button variant='blue' className="rounded-4xl py-3 w-fit mt-4 flex items-center gap-2">
+          <Button onClick={() => navigate('/resume/build')}  variant='blue' className="rounded-4xl py-3 w-fit mt-4 flex items-center gap-2">
             Build Now
             <PiNotePencilBold size={22} />
           </Button>
@@ -55,7 +59,7 @@ export const PreviewCards = () => {
             <li>Role-specific personalization</li>
             <li>ATS-friendly formatting</li>
           </ul>
-          <Button variant='blue' className="rounded-4xl py-3 w-fit mt-4 flex items-center gap-2">
+          <Button onClick={() => navigate('/resume/tailor')} variant='blue' className="rounded-4xl py-3 w-fit mt-4 flex items-center gap-2">
             Tailor to Job
             <LiaToolsSolid size={22} />
           </Button>
